@@ -15,6 +15,12 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
+
+  <div class="field">
+    <%= f.label :fun %><br>
+    <%= f.number_field :fun, :hours, in: 1..24 %>
+  </div>
+
   <div class="field">
     <%= f.label :user_id %><br>
     <%= f.number_field :user_id %>
