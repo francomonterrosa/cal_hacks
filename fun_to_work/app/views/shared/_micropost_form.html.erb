@@ -1,8 +1,16 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-   <%= f.text_area :content, placeholder: "Compose new micropost..." %>
-   <%= f.number_field :fun %>
+  	<p>FUN</p>
+  <%= f.number_field :fun, :in => 0..24, :step => 1 %>
+  <p>WORK</p>
+  <%= f.number_field :work, :in => 0..24, :step => 1 %>
+    <p>OTHER</p>
+  <%= f.number_field :other, :in => 0..24, :step => 1 %>
+    <p>HAPPINESS</p>
+  <%= f.number_field :happiness, :in => 1..10, :step => 1 %>
+
+   <%= f.text_area :content, placeholder: "How was your day?" %>
 
 
   </div>

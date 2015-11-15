@@ -2,7 +2,12 @@
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content"><%= micropost.content %></span>
-  <span class="fun"><%= micropost.fun %></span>
+<!--   <span class="fun"><%= micropost.fun %></span>
+  <span class="work"><%= micropost.work %></span>
+  <span class="other"><%= micropost.other %></span> -->
+  <span class="happiness"><%= micropost.happiness %></span>
+  <%= pie_chart ({"Fun" => micropost.fun, "Work" => micropost.work, "Other" => micropost.other}), colors: ["#ff669a", "#80ff80", "#80d5ff"] %>
+  <%= bar_chart ({"Happiness" => micropost.happiness}), height: "100px", colors: ["#ffff66"], max: 10 %>
 
   <span class="timestamp">
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
